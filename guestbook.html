@@ -1,0 +1,272 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>새벽소리 방명록</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #F5F5F5;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .top-line {
+            height: 12px;
+            background-color: #82D1BB;
+        }
+
+        h1, h2 {
+            color: #036057;
+        }
+
+        a {
+            color: #036057;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .guestbook-box {
+            width: 500px;
+            max-width: 85%;
+            background-color: white;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        textarea {
+            width: 90%;
+            height: 120px;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            resize: none;
+        }
+
+        button {
+            background-color: #82D1BB;
+            color: #036057;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #6EC3AB;
+        }
+
+        .message {
+            width: 500px;
+            max-width: 85%;
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-left: 5px solid #82D1BB;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+            text-align: left;
+        }
+
+        .message-name {
+            color: #036057;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 60px;
+            background-color: #82D1BB;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="top-line"></div>
+
+    <br><br>
+
+    <center>
+
+        <h1>새벽소리 방명록</h1>
+
+        <p>
+            하고 싶은 말이나 응원의 메시지를 남겨주세요.
+        </p>
+
+        <hr width="60%">
+
+        <a href="index.html">홈으로 돌아가기</a>
+
+    </center>
+
+
+    <div class="guestbook-box">
+
+        <h2>메시지 남기기</h2>
+
+        <label>이름</label><br>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="이름 또는 닉네임"
+        >
+
+        <br><br>
+
+        <label>한마디</label><br>
+
+        <textarea
+            id="content"
+            placeholder="새벽소리에게 메시지를 남겨주세요."
+        ></textarea>
+
+        <br><br>
+
+        <center>
+            <button onclick="addMessage()">
+                남기기
+            </button>
+        </center>
+
+    </div>
+
+
+    <center>
+
+        <h2>방명록</h2>
+
+    </center>
+
+
+    <!-- 새로 작성한 방명록이 들어가는 곳 -->
+    <div id="message-list">
+
+
+        <div class="message">
+
+            <div class="message-name">
+                익명
+            </div>
+
+            <p>
+                새벽소리 화이팅!!
+            </p>
+
+        </div>
+
+
+        <div class="message">
+
+            <div class="message-name">
+                방문자
+            </div>
+
+            <p>
+                공연 너무 좋았어요 :)
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <footer>
+        새벽소리 | IT어쿠스틱 밴드 동아리
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function addMessage() {
+
+            // 입력한 이름 가져오기
+            var name =
+                document.getElementById("name").value;
+
+            // 입력한 메시지 가져오기
+            var content =
+                document.getElementById("content").value;
+
+
+            // 이름을 안 적으면 익명으로 표시
+            if (name == "") {
+                name = "익명";
+            }
+
+
+            // 메시지를 안 적으면 등록하지 않음
+            if (content == "") {
+                alert("메시지를 입력해주세요.");
+                return;
+            }
+
+
+            // 새로운 방명록 박스 만들기
+            var newMessage =
+                document.createElement("div");
+
+            newMessage.className = "message";
+
+
+            // 이름 부분 만들기
+            var newName =
+                document.createElement("div");
+
+            newName.className = "message-name";
+
+            newName.innerText = name;
+
+
+            // 내용 부분 만들기
+            var newContent =
+                document.createElement("p");
+
+            newContent.innerText = content;
+
+
+            // 이름과 내용을 방명록 박스에 추가
+            newMessage.appendChild(newName);
+
+            newMessage.appendChild(newContent);
+
+
+            // 방명록 목록의 가장 위에 추가
+            var messageList =
+                document.getElementById("message-list");
+
+            messageList.prepend(newMessage);
+
+
+            // 입력창 비우기
+            document.getElementById("name").value = "";
+
+            document.getElementById("content").value = "";
+
+        }
+
+    </script>
+
+
+</body>
+</html>
