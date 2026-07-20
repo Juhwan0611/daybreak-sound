@@ -1,64 +1,286 @@
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>새벽소리</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #F5F5F5;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .top-line {
+            height: 12px;
+            background-color: #82D1BB;
+        }
+
+        .logo {
+            width: 320px;
+            max-width: 80%;
+            margin-top: 30px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #555;
+        }
+
+        nav {
+            width: 70%;
+            margin: 30px auto;
+            padding: 18px 0;
+            border-top: 2px solid #82D1BB;
+            border-bottom: 2px solid #82D1BB;
+        }
+
+        nav a {
+            color: #036057;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 25px;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            color: #82D1BB;
+        }
+
+        h2 {
+            color: #036057;
+        }
+
+        .welcome {
+            margin-top: 50px;
+        }
+
+        .welcome-line {
+            width: 50px;
+            height: 4px;
+            background-color: #82D1BB;
+            margin: 15px auto 25px;
+            border-radius: 10px;
+        }
+
+        .welcome p {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 50px auto;
+            width: 90%;
+        }
+
+        .card {
+            width: 210px;
+            background-color: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .card h3 {
+            color: #036057;
+        }
+
+        .card p {
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .icon {
+            font-size: 40px;
+        }
+
+        .today {
+            margin-top: 50px;
+        }
+
+        footer {
+            margin-top: 60px;
+            background-color: #82D1BB;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 700px) {
+            nav {
+                width: 90%;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px 12px;
+            }
+
+            .logo {
+                width: 250px;
+            }
+        }
+    </style>
 </head>
 
-<body bgcolor="#F5F5F5">
+<body>
+
+    <div class="top-line"></div>
 
     <br><br>
 
     <center>
-        <h1>새벽소리</h1>
-        <p>새벽소리 | 어쿠스틱 밴드 동아리</p>
 
-        <hr width="60%">
+        <!-- 기존 h1 새벽소리 대신 로고 이미지 -->
+        <img src="logo.png" class="logo">
 
-        <br>
-
-        <a href="https://www.instagram.com/daybreak_sound?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-            인스타 바로가기
-        </a>
-
-        &nbsp;&nbsp;&nbsp;
-        <a href="organization.html">조직도</a>
-
-        &nbsp;&nbsp;&nbsp;
-        <a href="#">음악</a>
-
-        &nbsp;&nbsp;&nbsp;
-        <a href="#">방명록</a>
-
-        <br><br>
-
-        <hr width="60%">
-
-        <br><br>
-
-        <h2>새벽소리에 오신 것을 환영합니다.</h2>
-
-        <p>
-            어쿠스틱 밴드 동아리 새벽소리<br>
-            새벽소리는 모두에게 열린 경험을 제공합니다.
+        <p class="subtitle">
+            새벽소리 | IT어쿠스틱 밴드 동아리
         </p>
 
+
+        <!-- 기존 메뉴 부분 -->
+        <nav>
+
+            <a href="organization.html">
+                조직도
+            </a>
+
+            <a href="performance.html">
+                공연 기록
+            </a>
+
+            <a href="https://www.instagram.com/daybreak_sound?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+               target="_blank">
+                Instagram
+            </a>
+
+            <a href="guestbook.html">
+                방명록
+            </a>
+
+        </nav>
+
+
+        <!-- 기존 환영 문구 부분 -->
+        <div class="welcome">
+
+            <h2>새벽소리에 오신 것을 환영합니다.</h2>
+
+            <div class="welcome-line"></div>
+
+            <p>
+                IT어쿠스틱 밴드 동아리 새벽소리<br>
+                새벽소리는 모두에게 열린 경험을 제공합니다.<br><br>
+
+                노래와 연주를 사랑하는 사람들이 모여<br>
+                함께 즐거운 추억을 만들어갑니다.
+            </p>
+
+        </div>
+
+
+        <!-- 메뉴 카드 -->
+        <div class="cards">
+
+            <div class="card">
+                <a href="organization.html">
+
+                    <div class="icon">👥</div>
+
+                    <h3>조직도</h3>
+
+                    <p>
+                        새벽소리의 구성원들과<br>
+                        파트별 정보를 확인해보세요.
+                    </p>
+
+                </a>
+            </div>
+
+
+            <div class="card">
+                <a href="performance.html">
+
+                    <div class="icon">🎵</div>
+
+                    <h3>공연 기록</h3>
+
+                    <p>
+                        정기공연의 세트리스트와<br>
+                        공연 기록을 확인해보세요.
+                    </p>
+
+                </a>
+            </div>
+
+
+            <div class="card">
+                <a href="https://www.instagram.com/daybreak_sound?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                   target="_blank">
+
+                    <div class="icon">📷</div>
+
+                    <h3>Instagram</h3>
+
+                    <p>
+                        새벽소리의 다양한 소식과<br>
+                        활동을 만나보세요.
+                    </p>
+
+                </a>
+            </div>
+
+
+            <div class="card">
+                <a href="#">
+
+                    <div class="icon">✏️</div>
+
+                    <h3>방명록</h3>
+
+                    <p>
+                        하고 싶은 말이나<br>
+                        응원의 메시지를 남겨주세요.
+                    </p>
+
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- 기존 오늘의 한마디 -->
+        <div class="today">
+
+            <h3>개발자의 한마디</h3>
+
+            <p>
+                "어떻게든 되겠죠 쌰갈"
+            </p>
+
+        </div>
+
+
         <br><br>
-
-        <h3>오늘의 새벽 한마디</h3>
-
-        <p>
-            "활기찬 하루를 보낼 수 있도록 해보아요<br>
-            내일은 오늘보다 조금 더 좋은 하루가 될 거예요."
-        </p>
-
-        <br><br>
-
-        <hr width="60%">
-
-        <p>
-            새벽소리 | 어쿠스틱 밴드 동아리
-        </p>
 
     </center>
+
+
+    <footer>
+
+        <center>
+            ©새벽소리 | IT어쿠스틱 밴드 동아리
+        </center>
+
+    </footer>
 
 </body>
 </html>
